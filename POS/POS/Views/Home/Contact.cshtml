@@ -1,0 +1,74 @@
+﻿<body>
+    <br />
+    <br />
+    <br />
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a asp-area="" asp-controller="Home" asp-action="About" class="navbar-brand">POS</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact" class="navbar-brand">Manager</a></li>
+                </ul>
+                @await Html.PartialAsync("_LoginPartial")
+            </div>
+        </div>
+    </nav>
+    <div>
+        <div class="panel panel-default">
+            <div class="panel-heading">Index</div>
+            <div class="panel-body">
+                <table align="left" style="width:25%;">
+
+                    @Html.ActionLink("Update Inventory", "Index", "Inventories")
+                    <br />
+                    @Html.ActionLink("Update Customer Information", "Index", "Customers")
+                    <br />
+                    @Html.ActionLink("Update Products", "Index", "Products")
+                    <br />
+                    @Html.ActionLink("Update Employees", "Index", "Employees")
+                    <br />
+                    @Html.ActionLink("Review Sales", "Index", "Sales")
+                    <br />
+                    @Html.ActionLink("Supplier Information", "Index", "Suppliers")
+                    <br />
+                    @Html.ActionLink("Review Supplier Transactions", "Index", "Sup_Trans")
+                    <br />
+                    @Html.ActionLink("Store Information", "Index", "Stores")
+                    <br />
+                </table>
+
+             </div>
+        </div>
+    
+    </div>
+</body>
+
+@*<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a asp-area="" asp-controller="Home" asp-action="About" class="navbar-brand">POS</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Manager</a></li>
+                </ul>
+                @await Html.PartialAsync("_LoginPartial")
+            </div>
+        </div>
+    </nav>
+</body>*@

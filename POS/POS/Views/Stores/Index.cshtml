@@ -1,0 +1,96 @@
+﻿@model IEnumerable<POS.Models.Store>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a asp-area="" asp-controller="Home" asp-action="About" class="navbar-brand">POS</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Manager</a></li>
+                </ul>
+                @await Html.PartialAsync("_LoginPartial")
+            </div>
+        </div>
+    </nav>
+</body>
+
+    @{
+        ViewData["Title"] = "Index";
+    }
+
+    <h2>Index</h2>
+
+
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.StoreID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StoreName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Store_streetName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Store_streetNum)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Store_City)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Store_State)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Store_ZipCode)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StoreID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StoreName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Store_streetName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Store_streetNum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Store_City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Store_State)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Store_ZipCode)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.StoreID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.StoreID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.StoreID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

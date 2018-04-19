@@ -1,0 +1,47 @@
+﻿@model IEnumerable<POS.Models.Sup_Trans>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.SupplierUpdate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Transaction_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductName)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierUpdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Transaction_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.OrderNum">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.OrderNum">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.OrderNum">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

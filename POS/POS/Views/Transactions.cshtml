@@ -1,0 +1,37 @@
+﻿@model POS.Models.Sup_Trans
+
+@{
+    ViewData["Title"] = "Transactions";
+    Layout = "~/Views/Sup_Trans/Index.cshtml";
+}
+
+<h2>Transactions</h2>
+
+<div>
+    <h4>Sup_Trans</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SupplierUpdate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SupplierUpdate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Transaction_ID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Transaction_ID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.OrderNum">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

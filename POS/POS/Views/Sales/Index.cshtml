@@ -1,0 +1,101 @@
+﻿@model IEnumerable<POS.Models.Sales>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.S_productName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.S_productModel)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.S_productBrand)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.S_productCost)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderTotal)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DiscountPercentage)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TransactionID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TransactionDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EmployeeID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RetailCost)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SalesUpdate)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.S_productName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.S_productModel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.S_productBrand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.S_productCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiscountPercentage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransactionID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransactionDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RetailCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalesUpdate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Sales_PID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Sales_PID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Sales_PID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

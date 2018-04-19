@@ -1,0 +1,78 @@
+﻿@model POS.Models.Employee
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StoreID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StoreID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MInit)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MInit)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.JobTitle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Supervisor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Supervisor)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.E_streetNum)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.E_streetNum)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.E_StreetName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.E_StreetName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.E_CityState)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.E_CityState)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.E_zipCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.E_zipCode)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.EmployerID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,2139 @@
+﻿@*<div class="panel panel-default">
+        <div class="panel-heading">System</div>
+        <div class="panel-body">
+            <table align="left" style ="width:25%;">
+
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-default">Cannon</button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-default">Nikon</button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-#default">Sony</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-default">Empty</button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-default">Empty</button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-default">Empty</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+
+            <table align="right" style="width:60%;"><tr><td><b> FUCKKKK!</b></td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table>
+        </div>
+    </div>*@
+<body>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a asp-area="" asp-controller="Home" asp-action="About" class="navbar-brand">POS</a>
+                <a asp-area="" asp-controller="Home" asp-action="Contact" class="navbar-brand">Manager</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                @await Html.PartialAsync("_LoginPartial")
+            </div>
+        </div>
+    </nav>
+</body>
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>POS - Modisoft</title>
+
+        <link href="~/css/kendo/kendo.common.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/css/kendo/kendo.blueopal.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/POSSite.css" rel="stylesheet" type="text/css" />
+        <link href="/Content/keyboard.css" rel="stylesheet" type="text/css" />
+
+        <script src="~/jquery.min.js"></script>
+
+        <script src="~/scripts.js" type="text/javascript"></script>
+
+        <link rel="SHORTCUT ICON" href="/favicon.ico" />
+
+        <!-- custom scrollbar stylesheet -->
+        @*<link rel="stylesheet" href="/Content/mCSB/jquery.mCustomScrollbar.css">*@
+        <!-- custom scrollbar plugin -->
+        @*<script src="/Content/mCSB/jquery.mCustomScrollbar.concat.min.js"></script>*@
+
+
+    </head>
+    <body>
+        @*<nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a asp-area="" asp-controller="Home" asp-action="About" class="navbar-brand">POS</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Manager</a></li>
+                    </ul>
+                    @await Html.PartialAsync("_LoginPartial")
+                </div>
+            </div>
+        </nav>*@
+        <style type="text/css">
+            html {
+                height: auto;
+            }
+
+            #company-name, #header, #menu, #footer, #footer-spacer {
+                display: none;
+            }
+
+            .main-content {
+                padding: 0px;
+            }
+
+            #container {
+                margin: 0 auto;
+            }
+
+            .mCSB_scrollTools {
+                width: 40px;
+            }
+
+            .mCS-3d-thick.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, .mCS-3d-thick-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+                width: 37px;
+            }
+
+            .mCSB_inside > .mCSB_container {
+                margin-right: 42px;
+            }
+        </style>
+        @*<script type="text/javascript" src="/Scripts/app/dbrd.js?v=635837086840000000"></script>*@
+        <div class="db-top-line" style="position:relative;">
+            <div style="position:absolute;left:10px; top:4px;">
+                Optimal Prime # 1
+            </div>
+            POS
+            <div style="position:absolute;right:10px; top:4px;">
+                MAIN REGISTER
+            </div>
+        </div>
+        <div class="db-top-speed">
+            <div style="float:right; margin-right:25px;" id="btnCloseDB">
+                <img src="/i/posapp/remove.png" alt="" />
+            </div>
+            <div style="float:right; margin-right:10px;">
+                <a href="/posapp/customercopy" target="_blank">
+                    <img src="/i/posapp/display48x48.png" alt="" />
+                </a>
+            </div>
+            @*<div class="db-top-speed-cont">
+                    <div class="db-top-speed-btn live" id="dTopSpeedKey" data-val="0">Speed Key</div>
+                    <div class="db-top-speed-btn" id="dTopDepartment" data-val="1">Departments</div>
+                    <div class="db-top-speed-btn" id="dTopTools" data-val="2">Tools</div>
+                    <div class="clr"></div>
+                </div>*@
+        </div>
+        <div class="db-outer clear-fix" id="dbDashBoard">
+            <div class="db-section">
+                <div class="db-items-cont">
+                    <div class="db-items-add-cont">
+                        <input type="text" class="db-items-add-textbox" placeholder="Scan UPC or Enter manually" id="tbScanUPC" />
+                        <div class="db-items-add-btn" id="dvEnterCmd">Add</div>
+                    </div>
+                    <div class="db-items-cart-cont">
+                        <div class="db-items-cart-heading clear-fix">
+                            <div class="col-1 text-center">Qty</div>
+                            <div class="col-2">Description</div>
+                            <div class="col-3 text-center">&nbsp;</div>
+                            <div class="col-4 text-center">Tax</div>
+                            <div class="col-5 text-right"></div>
+                            <div class="col-5 text-right">Price</div>
+                            <div class="col-6 text-right">&nbsp;</div>
+                        </div>
+                        <div id="dvItemsList" class="pos-items-cont content"></div>
+                    </div>
+                </div>
+
+                <div class="db-items-total-cont">
+                    <div class="db-items-total-line-cont clear-fix">
+                        <div class="db-items-total-right-blank">&nbsp;</div>
+                        <div class="db-items-total-amt-cont" id="dvSubTotal">0.00</div>
+                        <div class="db-items-total-label-cont">Sub-total</div>
+                    </div>
+                    <div class="db-items-total-line-cont clear-fix">
+                        <div class="db-items-total-right-blank">&nbsp;</div>
+                        <div class="db-items-total-amt-cont" id="dvTaxAmt">0.00</div>
+                        <div class="db-items-total-label-cont">Tax</div>
+                    </div>
+                    <div class="db-items-total-amt-line clear-fix">
+                        <div class="db-items-total-right-blank">&nbsp;</div>
+                        <div class="db-items-total-amt-cont" id="dvTotalAmt">0.00</div>
+                        <div class="db-items-total-label-cont">TOTAL</div>
+                    </div>
+
+                </div>
+
+            </div><!-- Left section -->
+            <div class="db-section db-sec-right">
+                <div id="dvSpeedBtns">
+                    <ul id="db-right-tabs-cont" class="db-right-tab-links clear-fix" style="display:none;">
+                        <li data-val="0" class="db-tab-li-sel active">Speed Key</li>
+                        <li data-val="1" class="db-tab-li-sel">Departments</li>
+                        <li data-val="2" class="db-tab-li-sel">Tools</li>
+                    </ul>
+                    <div id="db-right-tabs" style="position: relative;">
+                        <div id="dvTabCont0" class="db-right-tab-sel">
+                            <div id="dvSpeedKeys" class="clear-fix" style="margin-top: 5px; padding: 0px 5px 0px 7px;"></div>
+                        </div>
+                        <div id="dvTabCont1" class="db-right-tab-sel" style="display:none; margin-top: 5px; padding: 0px 5px 0px 7px;">
+                            <div id="dvDeptCont"></div>
+
+                            <div class="db-items-keypad-area-outer">
+                                <div class="db-items-keypad-cont-outer" style="float:none;margin: 0 auto;">
+                                    <div class="db-items-keypad-cont">
+                                        <div class="clear-fix">
+                                            <div class="db-items-keypad-btn" id="kb7" data-val="7">7</div>
+                                            <div class="db-items-keypad-btn" id="kb8" data-val="8">8</div>
+                                            <div class="db-items-keypad-btn last" id="kb9" data-val="9">9</div>
+                                        </div>
+                                        <div class="db-items-keypad-top-gap clear-fix">
+                                            <div class="db-items-keypad-btn" id="kb4" data-val="4">4</div>
+                                            <div class="db-items-keypad-btn" id="kb5" data-val="5">5</div>
+                                            <div class="db-items-keypad-btn last" id="kb6" data-val="6">6</div>
+                                        </div>
+                                        <div class="db-items-keypad-top-gap clear-fix">
+                                            <div class="db-items-keypad-btn" id="kb1" data-val="1">1</div>
+                                            <div class="db-items-keypad-btn" id="kb2" data-val="2">2</div>
+                                            <div class="db-items-keypad-btn last" id="kb3" data-val="3">3</div>
+                                        </div>
+                                        <div class="db-items-keypad-top-gap clear-fix">
+                                            <div class="db-items-keypad-btn" id="kb0" data-val="0">0</div>
+                                            <div class="db-items-keypad-btn" id="kb00" data-val="00">00</div>
+                                            <div class="db-items-keypad-btn last" id="dvClearUPC"><img src="/i/keypad-del.png" alt="" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div><!-- Dept List Ends -->
+                        <div id="dvTabCont2" class="db-right-tab-sel" style="display:none; margin-top: 5px; padding: 0px 5px 0px 7px;">
+
+
+                            <div class='db-speed-key-dept db-tools-btn' id="btnSignOut">
+                                <div style='padding-top:25px; text-align:center;'>Sign Out</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="dvOnHoldList" style="display:none;" class="db-right-panel">
+                    <div class="db-right-panel-top clear-fix">
+                        <div class="db-right-panel-top-label">On Hold Carts</div>
+                        <div class="db-right-panel-top-close">CLOSE</div>
+                    </div>
+                    <div id="dvHoldCarts" class="pos-popup-hold-cart clear-fix">
+
+                    </div>
+                </div>
+                <div id="dvPLUKeypad" style="display:none;" class="db-right-panel">
+                    <div class="db-right-panel-top clear-fix">
+                        <div class="db-right-panel-top-label">Manual Rung Up</div>
+                        <div class="db-right-panel-top-close">CLOSE</div>
+                    </div>
+                    <div class="pos-popup-hold-cart clear-fix">
+                        <div class="db-right-pay-amt-tender">
+                            <input type="text" class="db-items-add-textbox rt-align" disabled="disabled" id="tbManualRungupUPC" style="width: 266px;" />
+                        </div>
+                        <div class="db-items-keypad-cont-outer" style="width:90%; margin: 0 auto;">
+                            <div class="db-items-keypad-cont">
+                                <div class="clear-fix">
+                                    <div class="db-items-keypad-btn" id="kbPL7" data-val="7" style="width:30%;">7</div>
+                                    <div class="db-items-keypad-btn" id="kbPL8" data-val="8" style="width:30%;">8</div>
+                                    <div class="db-items-keypad-btn last" id="kbPL9" data-val="9" style="width:30%;">9</div>
+                                </div>
+                                <div class="db-items-keypad-top-gap clear-fix">
+                                    <div class="db-items-keypad-btn" id="kbPL4" data-val="4" style="width:30%;">4</div>
+                                    <div class="db-items-keypad-btn" id="kbPL5" data-val="5" style="width:30%;">5</div>
+                                    <div class="db-items-keypad-btn last" id="kbPL6" data-val="6" style="width:30%;">6</div>
+                                </div>
+                                <div class="db-items-keypad-top-gap clear-fix">
+                                    <div class="db-items-keypad-btn" id="kbPL1" data-val="1" style="width:30%;">1</div>
+                                    <div class="db-items-keypad-btn" id="kbPL2" data-val="2" style="width:30%;">2</div>
+                                    <div class="db-items-keypad-btn last" id="kbPL3" data-val="3" style="width:30%;">3</div>
+                                </div>
+                                <div class="db-items-keypad-top-gap clear-fix">
+                                    <div class="db-items-keypad-btn" id="kbPL0" data-val="0" style="width:30%;">0</div>
+                                    <div class="db-items-keypad-btn" id="kbPL00" data-val="00" style="width:30%;">00</div>
+                                    <div class="db-items-keypad-btn last" id="dvClearPL" style="width:30%;"><img src="/i/keypad-del.png" alt="" /></div>
+                                </div>
+                                <div class="db-items-keypad-top-gap clear-fix">
+                                    <div class="db-items-keypad-btn" id="kbPLClose" style="width:30%;">CLOSE</div>
+                                    <div class="db-items-keypad-btn" id="kbPLFOR" style="width:30%;"> / FOR</div>
+                                    <div class="db-items-keypad-btn last" id="kbPLEnter" style="width:30%;">ENTER</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="dvPayeesPayInOut" style="display:none;" class="db-right-panel">
+                    <div class="db-right-panel-top clear-fix">
+                        <div class="db-right-panel-top-label">Select Payee</div>
+                        <div class="db-right-panel-top-close">CLOSE</div>
+                    </div>
+                    <div id="dvPayeesList">
+                        <div id="dvPayeesListCont">
+                            <ul class="list-group" style="margin: 0;"></ul>
+                        </div>
+                    </div>
+
+                    <div id="dvPayInOutAmountCont" style="display:none;">
+                        <div class="db-right-pay-amt-tender">
+                            <h2>Enter Amount</h2>
+                            <input type="text" class="db-items-add-textbox rt-align" placeholder="00" disabled="disabled" id="tbPayInOutAmount" style="width: 266px;" />
+                        </div>
+                        <div style="width: 310px; margin: 0 auto;">
+                            <div class="clear-fix">
+                                <div class="db-items-keypad-cont-outer" style="border: 0 none;">
+                                    <div class="db-items-keypad-cont">
+                                        <div class="clear-fix">
+                                            <div class="db-items-keypad-btn" id="kbPIO7" data-val="7">7</div>
+                                            <div class="db-items-keypad-btn" id="kbPIO8" data-val="8">8</div>
+                                            <div class="db-items-keypad-btn last" id="kbPIO9" data-val="9">9</div>
+                                        </div>
+                                        <div class="db-items-keypad-top-gap clear-fix">
+                                            <div class="db-items-keypad-btn" id="kbPIO4" data-val="4">4</div>
+                                            <div class="db-items-keypad-btn" id="kbPIO5" data-val="5">5</div>
+                                            <div class="db-items-keypad-btn last" id="kbPIO6" data-val="6">6</div>
+                                        </div>
+                                        <div class="db-items-keypad-top-gap clear-fix">
+                                            <div class="db-items-keypad-btn" id="kbPIO1" data-val="1">1</div>
+                                            <div class="db-items-keypad-btn" id="kbPIO2" data-val="2">2</div>
+                                            <div class="db-items-keypad-btn last" id="kbPIO3" data-val="3">3</div>
+                                        </div>
+                                        <div class="db-items-keypad-top-gap clear-fix">
+                                            <div class="db-items-keypad-btn" id="kbPIO0" data-val="0">0</div>
+                                            <div class="db-items-keypad-btn" id="kbPIO00" data-val="00">00</div>
+                                            <div class="db-items-keypad-btn last" id="dvClearPAY"><img src="/i/keypad-del.png" alt="" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clear-fix">
+                                    <div class="db-items-keypad-blue-btn" id="btnPayInOut" style="margin-top: 10px; height: 60px; line-height:55px; width: 295px;">Save</div>
+                                </div>
+                            </div>
+                            <div class="db-guide">Enter Amount then press Save button</div>
+                        </div>
+                    </div>
+                </div><!-- Payees IN/Out -->
+                <div id="dvAddNewItem" style="display:none;" class="db-right-panel">
+                    <div class="db-right-panel-top clear-fix">
+                        <div class="db-right-panel-top-label">Add New Item</div>
+                        <div class="db-right-panel-top-close">CLOSE</div>
+                    </div>
+                    <div class="pos-popup-hold-cart clear-fix">
+                        <div class="pos-popup-cont clear-fix" style="width:95%; margin: 0 auto;">
+                            <div class="db-rgt-hf-left">
+                                <h4>UPC</h4>
+                                <div id="dvNewUPCLabel"></div>
+
+                                <h4>Unit Retail</h4>
+                                <input type="text" id="tbAddNewURetail" class="db-items-add-textbox rt-align" placeholder="00" disabled="disabled" style="width:93%" />
+                                <input type="hidden" id="tbAddNewITDesc" />
+                                <div style="width: 100%; margin: 20px auto 0; overflow:hidden;">
+                                    <div class="clear-fix">
+                                        <div class="db-items-keypad-cont-outer">
+                                            <div class="db-items-keypad-cont">
+                                                <div class="clear-fix">
+                                                    <div class="db-items-keypad-btn" id="kbNI7" data-val="7">7</div>
+                                                    <div class="db-items-keypad-btn" id="kbNI8" data-val="8">8</div>
+                                                    <div class="db-items-keypad-btn last" id="kbNI9" data-val="9">9</div>
+                                                </div>
+                                                <div class="db-items-keypad-top-gap clear-fix">
+                                                    <div class="db-items-keypad-btn" id="kbNI4" data-val="4">4</div>
+                                                    <div class="db-items-keypad-btn" id="kbNI5" data-val="5">5</div>
+                                                    <div class="db-items-keypad-btn last" id="kbNI6" data-val="6">6</div>
+                                                </div>
+                                                <div class="db-items-keypad-top-gap clear-fix">
+                                                    <div class="db-items-keypad-btn" id="kbNI1" data-val="1">1</div>
+                                                    <div class="db-items-keypad-btn" id="kbNI2" data-val="2">2</div>
+                                                    <div class="db-items-keypad-btn last" id="kbNI3" data-val="3">3</div>
+                                                </div>
+                                                <div class="db-items-keypad-top-gap clear-fix">
+                                                    <div class="db-items-keypad-btn" id="kbNI0" data-val="0">0</div>
+                                                    <div class="db-items-keypad-btn" id="kbNI00" data-val="00">00</div>
+                                                    <div class="db-items-keypad-btn last" id="dvClearNI"><img src="/i/keypad-del.png" alt="" /></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clear-fix">
+                                            <div class="db-items-keypad-blue-btn" id="btnAddNewItem" style="margin-top: 10px; height: 60px; line-height:55px; font-size:24px;">ADD ITEM</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="db-rgt-hf-right">
+                                <h2>Select Department</h2>
+                                <div id="dvDeptList">
+                                    <ul class="list-group" style="margin: 0;">
+                                        <li class="pos-popup-sel-payee" data-val="1000">Tax</li>
+                                        <li class="pos-popup-sel-payee" data-val="1003">NonTax</li>
+                                        <li class="pos-popup-sel-payee" data-val="1004">Cig pack</li>
+                                        <li class="pos-popup-sel-payee" data-val="1002">Tobacco</li>
+                                        <li class="pos-popup-sel-payee" data-val="1001">BEER</li>
+                                        <li class="pos-popup-sel-payee" data-val="1005">Lotto</li>
+                                        <li class="pos-popup-sel-payee" data-val="2153">Lotto PO</li>
+                                        <li class="pos-popup-sel-payee" data-val="1007">Money Order</li>
+                                        <li class="pos-popup-sel-payee" data-val="1008">Lottery</li>
+                                        <li class="pos-popup-sel-payee" data-val="2154">Lottery PO</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear-fix db-guide">
+                            <ul>
+                                <li>Enter Unit Retail</li>
+                                <li>Select Department</li>
+                                <li>Click Add Item</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="dvMPList" style="display:none;" class="db-right-panel">
+                    <div class="db-right-panel-top clear-fix">
+                        <div class="db-right-panel-top-label">Multi Pack Item</div>
+                        <div class="db-right-panel-top-close">CLOSE</div>
+                    </div>
+                    <div id="dvMPListHTML" class="pos-popup-hold-cart clear-fix">
+
+                    </div>
+                </div>
+                <div id="dvPayOutSec" style="display:none;" class="db-right-panel">
+                    <div class="db-right-panel-top clear-fix">
+                        <div class="db-right-panel-top-label">Select Tender</div>
+                        <div class="db-right-panel-top-close">CLOSE</div>
+                    </div>
+
+                    <div class="db-right-pay-top-outer clear-fix">
+                        <div class="db-right-pay-top-left">
+                            <div class="db-right-pay-outer clear-fix">
+                                <div class="db-right-pay-outer-left db-tender-pay-line">TO PAY</div>
+                                <div class="db-right-pay-outer-right db-tender-pay-line" id="dvPayAmtLabel"></div>
+                            </div>
+
+                            <div class="db-right-pay-amt-tender">
+                                <h2>Amount tendered</h2>
+                                <input type="text" class="db-items-add-textbox rt-align" placeholder="00" disabled="disabled" id="tbTenderAmount" />
+                            </div>
+                        </div><!-- PAY TOP LEFT ENDS -->
+                        <div class="db-right-pay-top-right">
+                            <div id="dvTenderLines"></div>
+                        </div><!-- PAY TOP RIGHT ENDS -->
+                    </div><!-- PAY TOP ENDS -->
+
+                    <div class="db-tender-btns" style="width:560px; margin: 10px auto 15px;">
+                        <div style="font-size:11px;color:#ff0000;margin-bottom:5px;">Food Stamp must be used as first Tender type if applicable</div>
+                        <div class="clear-fix">
+                            <div class="tender-quick-btn tender-quick" data-val="0" data-key="2"><span class="tender-small">Exact</span><br />Change</div>
+                            <div class="tender-quick-btn tender-quick" data-val="1" data-key="1"><span class="tender-small">+</span><br />1</div>
+                            <div class="tender-quick-btn tender-quick" data-val="5" data-key="1"><span class="tender-small">+</span><br />5</div>
+                            <div class="tender-quick-btn tender-quick" data-val="10" data-key="1"><span class="tender-small">+</span><br />10</div>
+                            <div class="tender-quick-btn tender-quick" data-val="20" data-key="1"><span class="tender-small">+</span><br />20</div>
+                            <div class="tender-quick-btn tender-quick" data-val="50" data-key="1"><span class="tender-small">+</span><br />50</div>
+                            <div class="tender-quick-btn tender-quick" data-val="100" data-key="1"><span class="tender-small">+</span><br />100</div>
+                        </div>
+                    </div>
+                    <div style="width:675px; margin: 0px auto 5px;">
+                        <div class="db-items-keypad-cont-outer" style="border: 0 none;">
+                            <div class="db-items-keypad-cont" style="padding: 0px 5px; margin-bottom: 10px;">
+                                <div class="clear-fix">
+                                    <div class="db-items-keypad-btn" id="kbpay7" data-val="7">7</div>
+                                    <div class="db-items-keypad-btn" id="kbpay8" data-val="8">8</div>
+                                    <div class="db-items-keypad-btn last" id="kbpay9" data-val="9">9</div>
+                                </div>
+                                <div class="db-items-keypad-top-gap clear-fix">
+                                    <div class="db-items-keypad-btn" id="kbpay4" data-val="4">4</div>
+                                    <div class="db-items-keypad-btn" id="kbpay5" data-val="5">5</div>
+                                    <div class="db-items-keypad-btn last" id="kbpay6" data-val="6">6</div>
+                                </div>
+                                <div class="db-items-keypad-top-gap clear-fix">
+                                    <div class="db-items-keypad-btn" id="kbpay1" data-val="1">1</div>
+                                    <div class="db-items-keypad-btn" id="kbpay2" data-val="2">2</div>
+                                    <div class="db-items-keypad-btn last" id="kbpay3" data-val="3">3</div>
+                                </div>
+                                <div class="db-items-keypad-top-gap clear-fix">
+                                    <div class="db-items-keypad-btn" id="kbpay0" data-val="0">0</div>
+                                    <div class="db-items-keypad-btn" id="kbpay00" data-val="00">00</div>
+                                    <div class="db-items-keypad-btn last" id="dvClearAmt"><img src="/i/keypad-del.png" alt="" /></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear-fix">
+                            <div id="dvTenderButtons"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="pos-popup-hold-cart-item clear-fix hide">
+                        <div class="pos-popup-hold-cart-item-time">CHANGE</div>
+                        <div class="pos-popup-hold-cart-item-amt text-right" id="dvChangeVal">0.00</div>
+                    </div>
+                </div>
+                <div id="dvSafeDrop" style="display:none;" class="db-right-panel">
+                    <div class="db-right-panel-top clear-fix">
+                        <div class="db-right-panel-top-label">Safe Drop</div>
+                        <div class="db-right-panel-top-close">CLOSE</div>
+                    </div>
+
+                    <div class="db-right-pay-amt-tender">
+                        <h2>Amount Dropped</h2>
+                        <input type="text" class="db-items-add-textbox rt-align" placeholder="00" disabled="disabled" id="tbSafeDropAmount" style="width: 266px;" />
+                    </div>
+
+                    <div style="width: 310px; margin: 0 auto;">
+                        <div class="clear-fix">
+                            <div class="db-items-keypad-cont-outer" style="border: 0 none;">
+                                <div class="db-items-keypad-cont">
+                                    <div class="clear-fix">
+                                        <div class="db-items-keypad-btn" id="kbsd7" data-val="7">7</div>
+                                        <div class="db-items-keypad-btn" id="kbsd8" data-val="8">8</div>
+                                        <div class="db-items-keypad-btn last" id="kbsd9" data-val="9">9</div>
+                                    </div>
+                                    <div class="db-items-keypad-top-gap clear-fix">
+                                        <div class="db-items-keypad-btn" id="kbsd4" data-val="4">4</div>
+                                        <div class="db-items-keypad-btn" id="kbsd5" data-val="5">5</div>
+                                        <div class="db-items-keypad-btn last" id="kbsd6" data-val="6">6</div>
+                                    </div>
+                                    <div class="db-items-keypad-top-gap clear-fix">
+                                        <div class="db-items-keypad-btn" id="kbsd1" data-val="1">1</div>
+                                        <div class="db-items-keypad-btn" id="kbsd2" data-val="2">2</div>
+                                        <div class="db-items-keypad-btn last" id="kbsd3" data-val="3">3</div>
+                                    </div>
+                                    <div class="db-items-keypad-top-gap clear-fix">
+                                        <div class="db-items-keypad-btn" id="kbsd0" data-val="0">0</div>
+                                        <div class="db-items-keypad-btn" id="kbsd00" data-val="00">00</div>
+                                        <div class="db-items-keypad-btn last" id="dvClearSD"><img src="/i/keypad-del.png" alt="" /></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear-fix" style="margin-top: 10px;">
+                            <div class="db-items-keypad-blue-btn" id="btnSafeDropSave" style="float:none; width: 295px; height:60px; line-height:53px; font-size:24px;">Safe Drop</div>
+                        </div>
+                        <div class="code-pwd-error-cont">
+                            <div id="dvSDMsg"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="dvPriceCheck" style="display:none; position: relative;" class="db-right-panel">
+                    <div class="db-right-panel-top clear-fix">
+                        <div class="db-right-panel-top-label">Price Check</div>
+                        <div class="db-right-panel-top-close">CLOSE</div>
+                    </div>
+
+                    <div id="dvPCheckCont"></div>
+
+                    <div style="width: 310px; margin: 20px auto 0;">
+                        <div class="clear-fix">
+                            <div class="db-items-keypad-cont-outer">
+                                <div class="db-items-keypad-cont">
+                                    <div class="clear-fix">
+                                        <div class="db-items-keypad-btn" id="kbPCK7" data-val="7">7</div>
+                                        <div class="db-items-keypad-btn" id="kbPCK8" data-val="8">8</div>
+                                        <div class="db-items-keypad-btn last" id="kbPCK9" data-val="9">9</div>
+                                    </div>
+                                    <div class="db-items-keypad-top-gap clear-fix">
+                                        <div class="db-items-keypad-btn" id="kbPCK4" data-val="4">4</div>
+                                        <div class="db-items-keypad-btn" id="kbPCK5" data-val="5">5</div>
+                                        <div class="db-items-keypad-btn last" id="kbPCK6" data-val="6">6</div>
+                                    </div>
+                                    <div class="db-items-keypad-top-gap clear-fix">
+                                        <div class="db-items-keypad-btn" id="kbPCK1" data-val="1">1</div>
+                                        <div class="db-items-keypad-btn" id="kbPCK2" data-val="2">2</div>
+                                        <div class="db-items-keypad-btn last" id="kbPCK3" data-val="3">3</div>
+                                    </div>
+                                    <div class="db-items-keypad-top-gap clear-fix">
+                                        <div class="db-items-keypad-btn" id="kbPCK0" data-val="0">0</div>
+                                        <div class="db-items-keypad-btn" id="kbPCK00" data-val="00">00</div>
+                                        <div class="db-items-keypad-btn last" id="dvClearPCheck"><img src="/i/keypad-del.png" alt="" /></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear-fix">
+                                <div class="db-items-keypad-blue-btn" id="btnUPCPCheck" style="margin-top: 10px; height: 60px; line-height:55px; width: 295px;">PLU / UPC</div>
+                            </div>
+                            <div class="db-guide">Scan Item / Enter Manual then press PLU/UPC button</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="dvPriceOverride" style="display:none; position: relative;" class="db-right-panel">
+                    <div class="db-right-panel-top clear-fix">
+                        <div class="db-right-panel-top-label">Price Override</div>
+                        <div class="db-right-panel-top-close">CLOSE</div>
+                    </div>
+
+                    <div id="dvPOverCont"></div>
+                    <div id="dvPCORItemCont">
+
+                        <div style="width: 310px; margin: 20px auto 0;">
+                            <div class="clear-fix">
+                                <div class="db-items-keypad-cont-outer">
+                                    <div class="db-items-keypad-cont">
+                                        <div class="clear-fix">
+                                            <div class="db-items-keypad-btn" id="kbPOV7" data-val="7">7</div>
+                                            <div class="db-items-keypad-btn" id="kbPOV8" data-val="8">8</div>
+                                            <div class="db-items-keypad-btn last" id="kbPOV9" data-val="9">9</div>
+                                        </div>
+                                        <div class="db-items-keypad-top-gap clear-fix">
+                                            <div class="db-items-keypad-btn" id="kbPOV4" data-val="4">4</div>
+                                            <div class="db-items-keypad-btn" id="kbPOV5" data-val="5">5</div>
+                                            <div class="db-items-keypad-btn last" id="kbPOV6" data-val="6">6</div>
+                                        </div>
+                                        <div class="db-items-keypad-top-gap clear-fix">
+                                            <div class="db-items-keypad-btn" id="kbPOV1" data-val="1">1</div>
+                                            <div class="db-items-keypad-btn" id="kbPOV2" data-val="2">2</div>
+                                            <div class="db-items-keypad-btn last" id="kbPOV3" data-val="3">3</div>
+                                        </div>
+                                        <div class="db-items-keypad-top-gap clear-fix">
+                                            <div class="db-items-keypad-btn" id="kbPOV0" data-val="0">0</div>
+                                            <div class="db-items-keypad-btn" id="kbPOV00" data-val="00">00</div>
+                                            <div class="db-items-keypad-btn last" id="dvClearPOver"><img src="/i/keypad-del.png" alt="" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clear-fix">
+                                    <div class="db-items-keypad-blue-btn" id="btnUPCPOver" style="margin-top: 10px; height: 60px; line-height:55px; width: 295px;">PLU / UPC</div>
+                                </div>
+                                <div class="db-guide">Scan Item / Enter Manual then press PLU/UPC button</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="dvPCORItemPriceCont" style="display:none;">
+                        <div class="db-right-pay-amt-tender" style="margin: 0 auto;">
+                            <input type="text" class="db-items-add-textbox rt-align" placeholder="00" disabled="disabled" id="tbOverrideAmount" style="width: 266px;" />
+                        </div>
+                        <div style="width: 310px; margin: 0 auto;">
+                            <div class="clear-fix">
+                                <div class="db-items-keypad-cont-outer" style="border: 0 none;">
+                                    <div class="db-items-keypad-cont">
+                                        <div class="clear-fix">
+                                            <div class="db-items-keypad-btn" id="kbPORD7" data-val="7">7</div>
+                                            <div class="db-items-keypad-btn" id="kbPORD8" data-val="8">8</div>
+                                            <div class="db-items-keypad-btn last" id="kbPORD9" data-val="9">9</div>
+                                        </div>
+                                        <div class="db-items-keypad-top-gap clear-fix">
+                                            <div class="db-items-keypad-btn" id="kbPORD4" data-val="4">4</div>
+                                            <div class="db-items-keypad-btn" id="kbPORD5" data-val="5">5</div>
+                                            <div class="db-items-keypad-btn last" id="kbPORD6" data-val="6">6</div>
+                                        </div>
+                                        <div class="db-items-keypad-top-gap clear-fix">
+                                            <div class="db-items-keypad-btn" id="kbPORD1" data-val="1">1</div>
+                                            <div class="db-items-keypad-btn" id="kbPORD2" data-val="2">2</div>
+                                            <div class="db-items-keypad-btn last" id="kbPORD3" data-val="3">3</div>
+                                        </div>
+                                        <div class="db-items-keypad-top-gap clear-fix">
+                                            <div class="db-items-keypad-btn" id="kbPORD0" data-val="0">0</div>
+                                            <div class="db-items-keypad-btn" id="kbPORD00" data-val="00">00</div>
+                                            <div class="db-items-keypad-btn last" id="dvClearPORD"><img src="/i/keypad-del.png" alt="" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clear-fix">
+                                    <div class="db-items-keypad-blue-btn" id="btnORDITem" style="margin-top: 10px; height: 60px; line-height:55px; width: 295px;">Override</div>
+                                </div>
+                            </div>
+                            <div class="db-guide">Enter new Price then press Override button</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="dvDiscountSec" style="display:none; position: relative;" class="db-right-panel">
+                    <div class="db-right-panel-top clear-fix">
+                        <div class="db-right-panel-top-label">Sales Discount</div>
+                        <div class="db-right-panel-top-close">CLOSE</div>
+                    </div>
+
+                    <div class="pos-popup-hold-cart clear-fix">
+                        <div class="pos-popup-cont clear-fix" style="width:95%; margin: 0 auto;">
+
+                            <div class="db-rgt-hf-left">
+                                <div class="db-right-pay-amt-tender">
+                                    <h2>Discount Amount</h2>
+                                    <input type="text" class="db-items-add-textbox rt-align" placeholder="00" disabled="disabled" id="tbDiscountAmount" />
+                                </div>
+                                <div style="width: 100%; margin: 20px auto 0; overflow:hidden;">
+                                    <div class="clear-fix">
+                                        <div class="db-items-keypad-cont-outer">
+                                            <div class="db-items-keypad-cont">
+                                                <div class="clear-fix">
+                                                    <div class="db-items-keypad-btn" id="kbDC7" data-val="7">7</div>
+                                                    <div class="db-items-keypad-btn" id="kbDC8" data-val="8">8</div>
+                                                    <div class="db-items-keypad-btn last" id="kbDC9" data-val="9">9</div>
+                                                </div>
+                                                <div class="db-items-keypad-top-gap clear-fix">
+                                                    <div class="db-items-keypad-btn" id="kbDC4" data-val="4">4</div>
+                                                    <div class="db-items-keypad-btn" id="kbDC5" data-val="5">5</div>
+                                                    <div class="db-items-keypad-btn last" id="kbDC6" data-val="6">6</div>
+                                                </div>
+                                                <div class="db-items-keypad-top-gap clear-fix">
+                                                    <div class="db-items-keypad-btn" id="kbDC1" data-val="1">1</div>
+                                                    <div class="db-items-keypad-btn" id="kbDC2" data-val="2">2</div>
+                                                    <div class="db-items-keypad-btn last" id="kbDC3" data-val="3">3</div>
+                                                </div>
+                                                <div class="db-items-keypad-top-gap clear-fix">
+                                                    <div class="db-items-keypad-btn" id="kbDC0" data-val="0">0</div>
+                                                    <div class="db-items-keypad-btn" id="kbDC00" data-val="00">00</div>
+                                                    <div class="db-items-keypad-btn last" id="dvClearDC"><img src="/i/keypad-del.png" alt="" /></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clear-fix">
+                                            <div style="margin-top: 10px; height: 60px; line-height:55px; font-size:24px; width: 140px;" id="btnSLDisc" class="db-items-keypad-blue-btn">$</div>
+                                            <div style="margin-top: 10px; height: 60px; line-height:55px; font-size:24px; width: 140px;" id="btnSLDiscPerc" class="db-items-keypad-blue-btn">%</div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="db-rgt-hf-right">
+                                <h2>Select Department</h2>
+                                <div id="dvDiscDeptList">
+                                    <ul class="list-group" style="margin: 0;">
+                                        <li class="pos-popup-sel-payee" data-val="1000">Tax</li>
+                                        <li class="pos-popup-sel-payee" data-val="1003">NonTax</li>
+                                        <li class="pos-popup-sel-payee" data-val="1004">Cig pack</li>
+                                        <li class="pos-popup-sel-payee" data-val="1002">Tobacco</li>
+                                        <li class="pos-popup-sel-payee" data-val="1001">BEER</li>
+                                        <li class="pos-popup-sel-payee" data-val="1005">Lotto</li>
+                                        <li class="pos-popup-sel-payee" data-val="2153">Lotto PO</li>
+                                        <li class="pos-popup-sel-payee" data-val="1007">Money Order</li>
+                                        <li class="pos-popup-sel-payee" data-val="1008">Lottery</li>
+                                        <li class="pos-popup-sel-payee" data-val="2154">Lottery PO</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="clr"></div>
+                            <div class="db-guide clear-fix">
+                                <ul>
+                                    <li>Enter Amount</li>
+                                    <li>Select Department</li>
+                                    <li>Click Discount button</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="dvAgeCheck" style="display:none; position: relative;" class="db-right-panel">
+                    <div class="db-right-panel-top clear-fix">
+                        <div class="db-right-panel-top-label">Check Minimum Age</div>
+                        <div class="db-right-panel-top-close">CLOSE</div>
+                    </div>
+
+                    <div style="padding: 7px; text-align:center;">
+                        <div class="db-alert-age-check" id="dvAgeMessage"></div>
+                        <div class="db-alert-age-check" style="margin:20px 0;">Is customer elligible to purchase this item?</div>
+                        <div class="clear-fix" style="margin:40px auto; width:350px;">
+                            <div class="db-items-keypad-blue-btn" id="btnAcceptAgeYes" style="height: 60px; line-height:55px; font-size:24px;">YES</div>
+                            <div class="db-items-keypad-blue-btn" id="btnAcceptAgeNO" style="height: 60px; line-height:55px; font-size:24px;">NO</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="dvCancelCheck" style="display:none; position: relative;" class="db-right-panel">
+                    <div class="db-right-panel-top clear-fix">
+                        <div class="db-right-panel-top-label">Cancel Transaction</div>
+                        <div class="db-right-panel-top-close">CLOSE</div>
+                    </div>
+
+                    <div style="padding: 7px; text-align:center;">
+                        <div class="db-alert-age-check" style="margin:20px 0;">Do you want to CANCEL this transaction?</div>
+                        <div class="clear-fix" style="margin:40px auto; width:350px;">
+                            <div class="db-items-keypad-blue-btn" id="btnAcceptCXLYes" style="height: 60px; line-height:55px; font-size:24px;">YES</div>
+                            <div class="db-items-keypad-blue-btn" id="btnAcceptCXLNO" style="height: 60px; line-height:55px; font-size:24px;">NO</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="dvDeptAgeCheck" style="display:none; position: relative;" class="db-right-panel">
+                    <div class="db-right-panel-top clear-fix">
+                        <div class="db-right-panel-top-label">Cancel Transaction</div>
+                        <div class="db-right-panel-top-close">CLOSE</div>
+                    </div>
+
+                    <div style="padding: 7px; text-align:center;">
+                        <div class="db-alert-age-check">
+                            <span class='bold'>This Department has an age restriction</span>.<br />Customer's Date of Birth cannot be later than<br /><span class='bold' id="dvDeptAgeMessage"></span>
+                        </div>
+                        <div class="db-alert-age-check" style="margin:20px 0;">Is customer elligible to purchase this item?</div>
+                        <div class="clear-fix" style="margin:40px auto; width:350px;">
+                            <div class="db-items-keypad-blue-btn" id="btnAcceptDeptAgeYes" style="height: 60px; line-height:55px; font-size:24px;">YES</div>
+                            <div class="db-items-keypad-blue-btn" id="btnAcceptDeptAgeNO" style="height: 60px; line-height:55px; font-size:24px;">NO</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="dvShowChange" style="display:none; position: relative;" class="db-right-panel">
+                    <div class="db-right-panel-top clear-fix">
+                        <div class="db-right-panel-top-label">Receipt</div>
+                        <div class="db-right-panel-top-close">CLOSE</div>
+                    </div>
+
+                    <div style="padding: 7px; text-align:center;">
+                        <div class="db-alert-age-check" style="text-align:center;">
+                            <span class='bold'>SALE COMPLETE!!</span>
+                            <br /><br />
+                            Total Sales: <span class='bold' id="dvTotalSaleAmt"></span>
+                            <br /><br />
+                            Collected: <span class='bold' id="dvAmtCollect"></span>
+                            <br /><br />
+                            Return: <span class='bold' id="dvReturnChange"></span>
+                        </div>
+
+                        <div class="clear-fix" style="margin:40px auto; width:160px;">
+                            <div class="db-items-keypad-blue-btn" id="btnPrintReceipt" style="height: 60px; line-height:55px; font-size:24px;">PRINT RECEIPT</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="dvLocalCredit" style="display:none;" class="db-right-panel">
+                    <div class="db-right-panel-top clear-fix">
+                        <div class="db-right-panel-top-label">Local Credit</div>
+                        <div class="db-right-panel-top-close">CLOSE</div>
+                    </div>
+
+                    <div class="db-alert-age-check" style="margin: 5px 10px;">
+                        <span class='bold'>Amount: <span id="spLocalCreditAmt"></span></span>
+                    </div>
+                    <div id="dvLCPayeesListCont">
+                        <ul class="list-group" style="margin: 0;"></ul>
+                    </div>
+                    <div class="clear-fix" style="margin:10px auto; width:160px;">
+                        <div class="db-items-keypad-blue-btn" id="btnSaveLocalCredit" style="height: 60px; line-height:55px; font-size:24px;">SAVE</div>
+                    </div>
+                </div><!-- Local Credit -->
+                <div id="dvDriveThru" style="display:none;" class="db-right-panel">
+                    <div class="db-right-panel-top clear-fix">
+                        <div class="db-right-panel-top-label">Drive Thru Price</div>
+                        <div class="db-right-panel-top-close">CLOSE</div>
+                    </div>
+                    <div class="db-drive-thru clear-fix">
+                        <div class="label">
+                            Start Date/Time
+                        </div>
+                        <div class="box">
+                            <input class="date" id="DriveThruStartDate" name="DriveThruStartDate" type="text" />
+                            <script>
+                                kendo.syncReady(function () { jQuery("#DriveThruStartDate").kendoDateTimePicker({ "format": "M/d/yyyy h:mm tt", "min": new Date(1900, 0, 1, 0, 0, 0, 0), "max": new Date(2099, 11, 31, 0, 0, 0, 0), "interval": 30 }); });
+                            </script>
+                        </div>
+                    </div>
+                    <div class="db-drive-thru clear-fix">
+                        <div class="label">
+                            End Date/Time
+                        </div>
+                        <div class="box">
+                            <input class="date" id="DriveThruEndDate" name="DriveThruEndDate" type="text" />
+                            <script>
+                                kendo.syncReady(function () { jQuery("#DriveThruEndDate").kendoDateTimePicker({ "format": "M/d/yyyy h:mm tt", "min": new Date(1900, 0, 1, 0, 0, 0, 0), "max": new Date(2099, 11, 31, 0, 0, 0, 0), "interval": 30 }); });
+                            </script>
+                        </div>
+                    </div>
+                    <div class="db-drive-thru clear-fix">
+                        <div class="label">
+                            <input type="radio" name="rbDriveThru" id="rdDriveThruPercent" />
+                        </div>
+                        <div class="box">
+                            <label for="rdDriveThruPercent">By PERCENT</label>
+                        </div>
+                    </div>
+                    <div class="db-drive-thru clear-fix">
+                        @*<div class="label">
+                                <input type="radio" name="rbDriveThru" id="rdDriveThruDollar" checked=&#39;checked&#39; />
+                            </div>*@
+                        <div class="box">
+                            <label for="rdDriveThruDollar">By DOLLAR</label>
+                        </div>
+                    </div>
+                    <div class="db-drive-thru clear-fix">
+                        <div class="label">
+                            Value
+                        </div>
+                        <div class="box">
+                            <input type="text" id="tbDriveThruAmount" style="width:50%;" class="rt-align" value="0" />
+                        </div>
+                    </div>
+
+                    <div class="clear-fix" style="margin:10px auto; width:160px;">
+                        <div class="db-items-keypad-blue-btn" id="btnSaveDriveThru" style="height: 60px; line-height:55px; font-size:24px;">SAVE</div>
+                    </div>
+                </div><!-- Local Credit -->
+            </div><!-- Right section -->
+            <div class="clr"></div>
+
+            <div class="clear-fix">
+                <div class="db-bottom-btns-cont">
+                    <div class="db-section">
+                        <div class="db-items-total-pay-green-btn" id="btnDBPay">Pay</div>
+                    </div>
+                    <div class="db-section">
+                        <div class="db-items-total-pay-grey-btn btm-right-set" id="btnTBUPCEnter">PLU / UPC</div>
+                        <div class="db-items-total-pay-grey-btn btm-right-set" id="btnTBMLR"> / FOR</div>
+                        <div class="clr"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="db-outer" id="dbReceipts" style="display:none;">
+            <div class="db-right-panel">
+                <div class="db-right-panel-top clear-fix">
+                    <div class="db-right-panel-top-label">Transaction Receipts</div>
+                    <div class="db-right-panel-top-close">CLOSE</div>
+                </div>
+                <div class="db-rcpt-sec-outer clear-fix">
+                    <div class="db-rcpt-left-sec">
+                        <input type="text" id="tbReceiptNo" class="db-items-add-textbox float-left" placeholder="Receipt No" style="width:25%; min-width:110px;" />
+                        <div class="rcpt-search-cont float-left">
+                            <div class="clear-fix" id="dvRcptDateFilterCont">
+                                <div class="float-left">
+                                    <img src="/i/plus48x48.png" data-act="1" alt="">
+                                </div>
+
+                                <div class="float-left" id="spRctDate">3/29/2018</div>
+                                <input type="hidden" id="hdnRctDateFilter" value="3/29/2018" />
+                                <div class="float-left">
+                                    <img style="" src="/i/minus48x48.png" data-act="-1" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="db-items-keypad-blue-btn" id="btnSearchReceipt" style="float:right; width: 100px;">Search</div>
+                        <div class="clear-fix"></div>
+
+
+                        <div id="dvReceiptsHistory" style="margin-top: 10px;"></div>
+                    </div>
+                    <div class="db-rcpt-right-sec">
+                        <div id="dvReceiptPrint"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" id="hdnPayMode" />
+        <input type="hidden" id="hdnPayeeId" />
+        <input id="StarPrinterIP" type="hidden">
+
+        <script type='text/javascript' src='/scripts/star/StarWebPrintBuilder.js'></script>
+        <script type='text/javascript' src='/scripts/star/StarWebPrintTrader.js'></script>
+        <div style="display:none;">
+            <form id="frmPrintChk" target="_blank" action="/posapp/PrintReceipt" method="post">
+                <input id="TranID" name="TranID" type="hidden" value="" />
+            </form>
+        </div>
+        <script type="text/javascript">
+            var arrSpeedKeyCatgs = [{ "__type": "<>f__AnonymousType25`3[[System.String, mscorlib],[System.Int32, mscorlib],[System.String, mscorlib]], CStoreWeb", "CatName": "Sony", "ID": 10005, "BgColor": "#d1e5fe" },{ "__type": "<>f__AnonymousType25`3[[System.String, mscorlib],[System.Int32, mscorlib],[System.String, mscorlib]], CStoreWeb", "CatName": "Canon", "ID": 13382, "BgColor": "#d1e5fe" }];
+            var arrSpeedCatgItems = [];
+            var arrDepartments = [];
+            var glbAutoPrintReceipt = "False" == "True";
+            var SelDeptId = -1;
+
+            function AdjustHeight() {
+
+                var noOfBoxes = 395 - 70 + 93;
+                var winHeight = $(window).height();
+
+                if (winHeight >= 1000 && winHeight < 1100) {
+                    noOfBoxes = 430 - 70 + 93;
+                }
+                else if (winHeight >= 900 && winHeight < 1100) {
+                    noOfBoxes = 430 - 70 + 93;
+                }
+                else if (winHeight >= 750 && winHeight < 800) {
+                    noOfBoxes = 430 - 65 + 93;
+                }
+                else if (winHeight >= 600 && winHeight < 660) {
+                    noOfBoxes = 362 + 93;
+                }
+
+                var itemsListHt = $(window).height() - noOfBoxes;
+                //force min 250px high
+                if (itemsListHt < 107)
+                    itemsListHt = 107;
+                $("#dvItemsList").css("height", itemsListHt + "px");
+                $("#dvItemsList").css("width", $(".db-items-cont").css("width"));
+
+                itemsListHt = $(window).height() - 77 - 55 - 90;
+                //force min 250px high
+                if (itemsListHt < 210)
+                    itemsListHt = 210;
+                $("#db-right-tabs").css("height", itemsListHt + "px");
+
+                itemsListHt = $(window).height() - 27 - 55 - 137;
+                $(".db-right-panel").css("height", itemsListHt + "px");
+
+                $("#dvPayeesListCont,#dvReceiptsHistory,#dvReceiptPrint").css("height", (itemsListHt - 150) + "px");
+                $("#dvLCPayeesListCont").css("height", (itemsListHt - 165) + "px");
+            }
+
+            $(function () {
+                AdjustHeight();
+                LoadSpeedKeyCatgs(0);
+                LoadDepartments(0);
+                SetupClickFunctions();
+
+
+                $.mCustomScrollbar.defaults.scrollButtons.enable = true;
+                $.mCustomScrollbar.defaults.axis = "y";
+
+                $("#dvDeptList").mCustomScrollbar({
+                    scrollButtons: { enable: true },
+                    theme: "3d-thick"
+                });
+
+                $("#dvDiscDeptList,#dvPayeesListCont").mCustomScrollbar({
+                    scrollButtons: { enable: true },
+                    theme: "3d-thick"
+                });
+
+                $(window).resize(function () {
+                    AdjustHeight();
+                });
+
+                $("#tbScanUPC").keydown(function (e) {
+                    e = e || window.event;
+                    if (e.keyCode == 13) {
+                        SearchAndLoadUPC();
+                    }
+                    AllowNumericsOnly(e);
+                });
+
+                $("#tbDriveThruAmount").keydown(function (e) {
+                    e = e || window.event;
+                    AllowNumericsOnly(e);
+                });
+
+                $('#db-right-tabs-cont').on('click', '.db-tab-li-sel', function () {
+                    var li = $(this);
+                    $('#db-right-tabs-cont li').removeClass("active");
+                    $(".db-right-tab-sel").hide();
+
+                    li.addClass("active");
+                    var itemKey = $(this).data("val");
+                    $("#dvTabCont" + itemKey).show();
+
+                });
+
+                $('.db-top-speed-cont').on('click', '.db-top-speed-btn', function () {
+                    var li = $(this);
+                    $('.db-top-speed-cont .db-top-speed-btn').removeClass("live");
+                    $(".db-right-tab-sel").hide();
+
+                    li.addClass("live");
+                    var itemKey = $(this).data("val");
+                    ShowRightSidePanel(0);
+                    $("#dvTabCont" + itemKey).show();
+
+                });
+
+                $('#dvDeptList').on('click', '.pos-popup-sel-payee', function () {
+                    $('#dvDeptList li').removeClass("selected");
+                    $(this).addClass("selected");
+                    iAddNewSelDeptId = $(this).data("val");
+                    sAddNewSelDeptName = $(this).html();
+                });
+
+                $('#dvDiscDeptList').on('click', '.pos-popup-sel-payee', function () {
+                    $('#dvDiscDeptList li').removeClass("selected");
+                    $(this).addClass("selected");
+                    iDiscountSelDeptId = $(this).data("val");
+                });
+
+                $('#dvLCPayeesListCont').on('click', '.pos-popup-sel-payee', function () {
+                    $('#dvLCPayeesListCont li').removeClass("selected");
+                    $(this).addClass("selected");
+                    iLocalCreditSelPayeeId = $(this).data("val");
+                });
+
+                $('#dvDeptCont').on('click', '.db-speed-key-dept,.db-speed-key-main-ctg-back', function () {
+                    var itemKey = $(this).data("val") + '';
+                    SelDeptId = itemKey;
+
+                    if (itemKey.indexOf("LM") >= 0) {
+                        itemKey = itemKey.replace("LM", "");
+                        LoadDepartments(parseInt(itemKey));
+                    }
+                    else {
+                        var Amount = parseInt($("#tbScanUPC").val()) || 0;
+
+                        if (Amount == 0) {
+                            alert("Please enter amount");
+                            return;
+                        }
+                        var AgeCheck = $(this).data("age") + '';
+                        if (AgeCheck == "0") {
+                            DeptAgeVerified(true);
+                        }
+                        else {
+                            $("#dvDeptAgeMessage").html($(this).data("ages"));
+                            ShowRightSidePanel(13);
+                        }
+                    }
+
+                })
+            });
+
+            function ShowRightSidePanel(ID) {
+                $("#dvReceiptPrint").html("");
+                $("#dbDashBoard").show();
+                $("#dvLocalCredit,#dvShowChange,#dvPLUKeypad,#dvOnHoldList,#dvSpeedBtns,#dvPayeesPayInOut,#dvAddNewItem,#dvMPList,#dvPayOutSec,#dbReceipts,#dvSafeDrop,#dvPriceCheck,#dvPriceOverride,#dvDiscountSec,#dvAgeCheck,#dvCancelCheck,#dvDeptAgeCheck,#dvDriveThru").hide();
+                currTabSel = -1;
+
+                switch (ID) {
+                    case 0:
+                        $("#dvSpeedBtns").show();
+                        $("#tbScanUPC").val("").focus();
+                        break;
+                    case 1:
+                        $("#dvOnHoldList").show();
+                        break;
+                    case 2:
+                        $("#dvPayeesPayInOut").show();
+                        break;
+                    case 3:
+                        $('#dvDeptList li').removeClass("selected");
+                        $("#dvAddNewItem").show();
+                        break;
+                    case 4:
+                        $("#dvMPList").show();
+                        break;
+                    case 5:
+                        $("#dvPayOutSec").show();
+                        LoadTenderButtons();
+                        LoadTenderLines();
+                        break;
+                    case 6:
+                        $("#dbDashBoard").hide();
+                        $("#dbReceipts").show();
+                        break;
+                    case 7:
+                        $("#dvSafeDrop").show();
+                        break;
+                    case 8:
+                        currTabSel = 1;
+                        $("#dvPriceCheck").show();
+                        $("#tbScanUPC").val("").focus();
+                        break;
+                    case 9:
+                        currTabSel = 2;
+                        $("#dvPriceOverride").show();
+                        $("#tbScanUPC").val("").focus();
+                        break;
+                    case 10:
+                        $('#dvDiscDeptList li').removeClass("selected");
+                        $("#dvDiscountSec").show();
+                        break;
+                    case 11:
+                        $("#dvAgeCheck").show();
+                        break;
+                    case 12:
+                        $("#dvCancelCheck").show();
+                        break;
+                    case 13:
+                        $("#dvDeptAgeCheck").show();
+                        break;
+                    case 14:
+                        $("#dvPLUKeypad").show();
+                        break;
+                    case 15:
+                        $("#dvDriveThru").show();
+                        break;
+                    case 99:
+                        $("#dvShowChange").show();
+                        break;
+                    case 100:
+                        if ($("#dvLCPayeesListCont").hasClass("mCustomScrollbar")) {
+                            $("#dvLCPayeesListCont").mCustomScrollbar("destroy");
+                        }
+
+                        $('#dvLCPayeesListCont li').removeClass("selected");
+                        $("#spLocalCreditAmt").html($(".pos-pending").html());
+                        iLocalCreditSelPayeeId = -1;
+                        $("#dvLocalCredit").show();
+
+                        $("#dvLCPayeesListCont").mCustomScrollbar({
+                            scrollButtons: { enable: true },
+                            theme: "3d-thick"
+                        });
+                        break;
+                }
+
+            }
+
+
+            function LoadSpeedKeyCatgs(sIndex) {
+
+                //check screen size and adjust
+                /*
+                1920 X 1080 - 969
+                1600 X 900 - 789
+                1280 X 720 - 609
+                1024       - 657
+                */
+
+                var noOfBoxes = 13;
+                var winHeight = $(window).height();
+                if (winHeight >= 1000 && winHeight < 1100) {
+                    noOfBoxes = 38;
+                }
+                else if (winHeight >= 900 && winHeight < 1000) {
+                    noOfBoxes = 33;
+                }
+                else if (winHeight >= 750 && winHeight < 800) {
+                    noOfBoxes = 23;
+                }
+                else if (winHeight >= 600 && winHeight < 620) {
+                    noOfBoxes = 13;
+                }
+
+
+                var totalCatgs = arrSpeedKeyCatgs.length;
+                var blnShowMore = totalCatgs > noOfBoxes;
+                var currFetch = sIndex + noOfBoxes;
+
+                var blnShowMore = false;
+                if (totalCatgs > currFetch) {
+                    currFetch = (totalCatgs - sIndex);
+                    if (currFetch > noOfBoxes) {
+                        currFetch = noOfBoxes;
+                        blnShowMore = true;
+                    }
+                }
+                else
+                    currFetch = totalCatgs - sIndex;
+
+                var sHTML = "";
+                var currItems = 1;
+                var iBrk = 0;
+                for (iCtr = sIndex; iCtr < (sIndex + currFetch); iCtr++) {
+                    var oCatg = arrSpeedKeyCatgs[iCtr];
+                    if (iBrk > 0 && iBrk % 5 == 0) {
+                        sHTML += "<div class='clr'></div><div class='clear-fix' style='height: 7px;'>&nbsp;</div>";
+                    }
+                    sHTML += "<div class='db-speed-key-main-ctg' style='background-color: " + oCatg.BgColor + "' data-val='" + oCatg.ID + "' data-color='" + oCatg.BgColor + "'><div style='padding-top:25px; text-align:center;'>" + oCatg.CatName + "</div></div>"
+                    currItems++;
+                    iBrk++;
+                }
+
+                if (blnShowMore) {
+                    var nextIndex = sIndex + currFetch;
+                    sHTML += "<div class='db-speed-key-main-ctg-back' data-val='LM" + nextIndex + "'><div style='padding-top:25px; text-align:center;'>NEXT</div></div>";
+
+                    if (sIndex > 0) {
+                        nextIndex = sIndex - noOfBoxes;
+                        sHTML += "<div class='db-speed-key-main-ctg-back' data-val='LM" + nextIndex + "'><div style='padding-top:25px; text-align:center;'>BACK</div></div>";
+                    }
+                }
+                else if (sIndex > 0) {
+                    var nextIndex = sIndex - noOfBoxes;
+                    sHTML += "<div class='db-speed-key-main-ctg-back' data-val='LM" + nextIndex + "'><div style='padding-top:25px; text-align:center;'>BACK</div></div>";
+                }
+
+                $("#dvSpeedKeys").html(sHTML);
+            }
+
+            function LoadDepartments(sIndex) {
+
+                //check screen size and adjust
+                /*
+                1920 X 1080 - 969
+                1600 X 900 - 789
+                1280 X 720 - 609
+                1024       - 657
+                */
+
+                var noOfBoxes = 13;
+                var winHeight = $(window).height() - 145;
+                if (winHeight >= 1000 && winHeight < 1100) {
+                    noOfBoxes = 33;
+                }
+                else if (winHeight >= 900 && winHeight < 1000) {
+                    noOfBoxes = 28;
+                }
+                else if (winHeight >= 750 && winHeight < 800) {
+                    noOfBoxes = 18;
+                }
+                else if (winHeight >= 500 && winHeight < 620) {
+                    noOfBoxes = 8;
+                }
+
+                var totalCatgs = arrDepartments.length;
+                var blnShowMore = totalCatgs > noOfBoxes;
+                var currFetch = sIndex + noOfBoxes;
+
+                var blnShowMore = false;
+                if (totalCatgs > currFetch) {
+                    currFetch = (totalCatgs - sIndex);
+                    if (currFetch > noOfBoxes) {
+                        currFetch = noOfBoxes;
+                        blnShowMore = true;
+                    }
+                }
+                else
+                    currFetch = totalCatgs - sIndex;
+
+                var sHTML = "";
+                var currItems = 1;
+
+                for (iCtr = sIndex; iCtr < (sIndex + currFetch); iCtr++) {
+                    var oCatg = arrDepartments[iCtr];
+
+                    sHTML += "<div class='db-speed-key-dept' data-val='" + oCatg.ID + "' data-age='" + oCatg.AgeCheck + "' data-ages='" + oCatg.DateStr + "'><div style='padding-top:25px; text-align:center;'>" + oCatg.Text + "</div></div>"
+                    currItems++;
+
+                }
+
+                if (blnShowMore) {
+                    var nextIndex = sIndex + currFetch;
+                    sHTML += "<div class='db-speed-key-main-ctg-back' data-val='LM" + nextIndex + "'><div style='padding-top:25px; text-align:center;'>NEXT</div></div>";
+
+                    if (sIndex > 0) {
+                        nextIndex = sIndex - noOfBoxes;
+                        sHTML += "<div class='db-speed-key-main-ctg-back' data-val='LM" + nextIndex + "'><div style='padding-top:25px; text-align:center;'>BACK</div></div>";
+                    }
+                }
+                else if (sIndex > 0) {
+                    var nextIndex = sIndex - noOfBoxes;
+                    sHTML += "<div class='db-speed-key-main-ctg-back' data-val='LM" + nextIndex + "'><div style='padding-top:25px; text-align:center;'>BACK</div></div>";
+                }
+
+
+                sHTML += "<div class='clr'></div>";
+                $("#dvDeptCont").html(sHTML);
+            }
+
+            var tempSelTranId = -1;
+            var tempSelPVRSunts = 1;
+            var tempSelPVRRetail = 0;
+            function SetupClickFunctions() {
+
+                $('#dvRcptDateFilterCont').on('click', 'img', function () {
+                    var qty = parseInt($(this).data("act"));
+
+                    var date = new Date($("#hdnRctDateFilter").val());
+                    date.setDate(date.getDate() + qty);
+
+                    var dateStr = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear();
+                    $("#hdnRctDateFilter").val(dateStr);
+                    $("#spRctDate").html(dateStr);
+
+                });
+                $('#dvItemsList').on('click', '.db-items-cart-items img', function () {
+                    var qty = $(this).data("act");
+                    var ID = $(this).data("val");
+
+                    if (qty) {
+                        $.post("/posapp/ChangeItemQty", { ID: ID, Qty: qty }, function (data) {
+                            ReloadItemsList(data);
+                        });
+                    }
+
+                });
+                $('#dvSpeedKeys').on('click', '.db-speed-key-main-ctg,.db-speed-key-main-ctg-back', function () {
+                    var catgID = $(this).data("val") + '';
+                    var Color = $(this).data("color");
+
+                    if (catgID.indexOf("LM") >= 0) {
+                        catgID = catgID.replace("LM", "");
+                        LoadSpeedKeyCatgs(parseInt(catgID));
+                    }
+                    else {
+                        LoadSpeedCatgItems(catgID, Color);
+                    }
+                });
+
+                $('#dvSpeedKeys').on('click', '.db-speed-key-main-ctg-item,.db-speed-key-main-ctg-item-back', function () {
+                    var itemKey = $(this).data("val");
+
+                    if (parseInt(itemKey) < 0) {
+                        LoadSpeedKeyCatgs(0);
+                    }
+                    else {
+                        glbSpeedItemKey = itemKey;
+                        AddSpeedKeyItem(null);
+                    }
+                });
+
+                $('#dvHoldCarts').on('click', '.pos-popup-hold-cart-item', function () {
+                    var ID = $(this).data("val");
+                    $.post("/posapp/SelectOnHoldCart", { ID: ID }, function (data) {
+                        ShowRightSidePanel(0);
+                        ReloadItemsList(data.Data);
+                        if (data.Total > 0)
+                            $("#btnDBHold").html("Hold (" + data.Total + ")");
+                        else
+                            $("#btnDBHold").html("Hold");
+                    });
+
+                });
+
+                $('#dvReceiptsHistory').on('click', '.pos-popup-hold-cart-item', function () {
+
+                    if ($("#dvReceiptPrint").hasClass("mCustomScrollbar")) {
+                        $("#dvReceiptPrint").mCustomScrollbar("destroy");
+                    }
+                    $("#dvReceiptPrint").html("<img src='/i/posapp/wait.gif' alt='' />");
+                    var ID = $(this).data("val");
+                    tempSelTranId = ID;
+                    $.post("/posapp/PrintReceipt", { TranID: ID, Print: false }, function (data) {
+                        $("#dvReceiptPrint").html(data);
+                        $("#dvReceiptPrint").append("<br/><br/><div class='db-items-total-pay-green-btn' id='btnPrintRecpt' style='margin-top: 20px;'>Print</div>");
+
+                        $("#dvReceiptPrint").mCustomScrollbar({
+                            scrollButtons: { enable: true },
+                            theme: "3d-thick"
+                        });
+
+
+                        $("#btnPrintRecpt").click(function () {
+                            var data = {}
+                            data.TranID = tempSelTranId;
+                            PrintReceipt(data);
+                        })
+                    });
+
+                });
+
+                $('#dvMPListHTML').on('click', '.pos-popup-hold-cart-item', function () {
+                    AddItemToTempOrder($(this).data("val"), $(this).data("key"));
+                    ShowRightSidePanel(0);
+                });
+
+                //Price Check
+                $('#dvPCheckCont').on('click', '.pos-popup-hold-cart-item', function () {
+                    AddItemToTempOrder($(this).data("val"), $(this).data("key"));
+                    ShowRightSidePanel(0);
+                });
+
+                //Price Override
+                $('#dvPOverCont').on('click', '.pos-popup-hold-cart-item', function () {
+                    tempSelPVRSunts = $(this).data("val");
+                    tempSelPVRRetail = $(this).data("key");
+                    ShowPriceOverrideBox();
+                });
+
+                $(".pos-popup-sel-payee").click(function () {
+                    var PayeeId = $(this).data("val");
+                    $("#hdnPayeeId").val(PayeeId);
+                    $("#dvPayeesList").hide();
+                    $("#dvPayInOutAmountCont").show();
+                    $("#tbPayInOutAmount").val("");
+                });
+
+                $("#btnPayInOut").click(function () {
+
+                    var URetail = parseFloat($("#tbPayInOutAmount").val()) || 0;
+
+                    if (URetail == 0) {
+                        alert("Please enter Amount.");
+                        return;
+                    }
+
+                    var dataToPost = {
+                        Payee: $("#hdnPayeeId").val(),
+                        Amount: $("#tbPayInOutAmount").val(),
+                        Mode: $("#hdnPayMode").val()
+                    }
+                    $.post("/posapp/savepay", dataToPost, function (data) {
+                        ShowRightSidePanel(0);
+                        OpenDrawer();
+                        $("#tbScanUPC").val("").focus();
+                    });
+
+                });
+
+                $('#dvTenderButtons').on('click', '.tender-type', function () {
+                    var Amount = parseFloat($("#tbTenderAmount").val()) || 0;
+
+                    var Code = $(this).data("code");
+                    var Type = $(this).data("val");
+
+                    glbLastTenderCode = Code;
+                    if (Code == "Local Credit") {
+                        ShowRightSidePanel(100);
+                    }
+                    else {
+                        SaveTender(Code, Type);
+                    }
+
+                });
+
+                $('#dvTenderButtons').on('click', '.no-tax', function () {
+
+                    var cCode = $(this).html();
+                    if (cCode == "No Tax") {
+                        ResetPayTax(0);
+                        $(this).html("Add Tax");
+                    }
+                    else if (cCode == "Add Tax") {
+                        ResetPayTax(1);
+                        $(this).html("No Tax");
+                    }
+
+                });
+
+                $(".tender-quick").click(function () {
+
+                    var Code = "Cash";
+                    var Type = 2;
+                    var Mode = $(this).data("key") + '';
+
+                    switch (Mode) {
+                        case "1":
+                            $("#tbTenderAmount").val($(this).data("val") + '.00');
+                            break;
+                        case "2":
+                            $("#tbTenderAmount").val($("#dvTotalAmt").html());
+                            break;
+                    }
+
+                    //SaveTender(Code, Type);
+
+                });
+
+                $(".db-right-panel-top-close").click(function () { ShowRightSidePanel(0); });
+
+                $("#btnDBHold").click(HoldCartItems);
+                $("#btnNoSales,#btnTB2NoSales").click(DoNoSales);
+                $("#btnReceipts").click(GetReceipts);
+                $("#btnSearchReceipt").click(LoadReceipts);
+                $("#btnCloseDB").click(function () { location.href = "/home/"; });
+                $("#btnCLoseTill").click(function () { location.href = "/posapp/closetill"; });
+                $("#btnCLoseDay").click(function () { location.href = "/posapp/closeday"; });
+                $("#btnSignOut").click(function () { location.href = "/posapp/signout"; });
+                $("#btnPayIn").click(function () { PayOutMode(0); });
+                $("#btnPayOut,#btnTB2PayOut").click(function () { PayOutMode(1); });
+                $("#btnTB2UPCEnter").click(function () { SearchAndLoadUPC(); });
+
+                $("#btnSafeDrop,#btnTB2SafeDrop").click(function () { SafeDropTab(); });
+                $("#btnSafeDropSave").click(function () { SafeDropSave(); });
+
+                $("#btnPriceCheck").click(function () { PriceCheckTab(); });
+                $("#btnUPCPCheck").click(function () { SearchAndCheckUPC(); });
+
+                $("#btnPriceOver,#btnTB2PriceOver").click(function () { PriceOverTab(); });
+                $("#btnUPCPOver").click(function () { SearchAndOverrideUPC(); });
+                $("#btnORDITem").click(function () { OverrideUPCAndAdd(); });
+
+                $("#btnDiscount,#btnTB2Discount").click(function () { DiscountTab(); });
+                $("#btnSLDisc").click(function () { ApplyDiscount(); });
+                $("#btnSLDiscPerc").click(function () { ApplyDiscountPerc(); });
+
+                $("#btnDBCxl").click(function () { CheckCancel(); });
+                $("#btnDBPay").click(function () {
+                    if ($("#dvItemsList .mCSB_container").length == 0 && $("#dvItemsList").html().length == 0) {
+                        return;
+                    }
+                    ResetPayPanel(1);
+                });
+
+                $("#btnAcceptAgeYes").click(function () { AgeVerified(true); });
+                $("#btnAcceptAgeNO").click(function () { AgeVerified(false); });
+
+                $("#btnAcceptDeptAgeYes").click(function () { DeptAgeVerified(true); });
+                $("#btnAcceptDeptAgeNO").click(function () { DeptAgeVerified(false); });
+
+                $("#btnAcceptCXLYes").click(function () { CancelTxn(true); });
+                $("#btnAcceptCXLNO").click(function () { CancelTxn(false); });
+
+                $("#btnTB2TBMLR").click(SetMultiplier);
+                $("#btnTBMLR,#btnTBUPCEnter").click(function () { $("#tbManualRungupUPC").val(""); ShowRightSidePanel(14); });
+
+                $("#btnRefund,#btnTB2Refund").click(function () { RefundAction(); });
+                $("#btnPrintReceipt").click(function () { PrintReceipt(currTranInfo); });
+                $("#btnSaveLocalCredit").click(function () { SaveLocalCredit(); });
+
+                $("#btnDriveThru").click(function () { ShowRightSidePanel(15); });
+                $("#btnSaveDriveThru").click(function () { SaveDriveThru(); });
+            }
+
+            function SaveDriveThru() {
+                $.post("/posapp/updateDriveThru", {
+                    StartDate: $("#DriveThruStartDate").val(),
+                    EndDate: $("#DriveThruEndDate").val(),
+                    IsPercent: $("#rdDriveThruPercent").is(":checked"),
+                    Amount: $("#tbDriveThruAmount").val()
+                }, function (data) {
+                    ShowRightSidePanel(0);
+
+                });
+            }
+
+            function ResetPayTax(TaxMode) {
+
+                $("#dvTenderLines,#dvChangeVal").html("");
+                $("#tbTenderAmount").val("");
+
+                $.post("/posapp/updateTax", { TaxMode: TaxMode }, function (data) {
+                    ReloadItemsList(data);
+                    LoadTenderLines();
+                    $("#dvPayAmtLabel").html($("#dvTotalAmt").html());
+
+                });
+            }
+
+            var glbReturnChange = 0;
+            function SaveTender(Code, Type) {
+                glbReturnChange = 0;
+                var dataToPost = {
+                    Amount: $("#tbTenderAmount").val(),
+                    Total: $("#dvTotalAmt").html(),
+                    Code: Code,
+                    Type: Type,
+                    PayMode: glbPayMode
+                }
+                $.post("/posapp/savetenderamount", dataToPost, function (data) {
+                    $("#tbTenderAmount").val("");
+
+                    ReloadTenderLines();
+
+                    if (data && data.IsSuccess) {
+                        if (data.IsAlert) {
+                            glbReturnChange = parseFloat(data.Message);
+                            //$("#dvChangeVal").html(kendo.format('{0:c2}', data.Message));
+                            PerformSale(1);
+                        }
+                    }
+                    else {
+                        alert(data.Message || "Please enter Amount");
+                    }
+                });
+            }
+
+            function LoadSpeedCatgItems(CatID, Color) {
+                var selItems = $.grep(arrSpeedCatgItems, function (n, i) {
+                    return n.CatID == CatID;
+                });
+
+                var sHTML = "";
+                for (iCtr = 0; iCtr < selItems.length; iCtr++) {
+                    var oCatg = selItems[iCtr];
+                    if (iCtr > 0 && iCtr % 5 == 0) {
+                        sHTML += "<div class='clr'></div><div class='clear-fix' style='height: 7px;'>&nbsp;</div>";
+                    }
+
+                    sHTML += "<div class='db-speed-key-main-ctg-item' data-val='" + oCatg.ItemKey + "' style='background-color: " + Color + "'><div style='padding-top:25px; text-align:center;'>" + oCatg.Desc + "</div></div>";
+                }
+                sHTML += "<div class='db-speed-key-main-ctg-item-back' data-val='-1' style='text-align:center;'><div style='padding-top:25px; text-align:center;'>BACK</div></div>"
+                if (selItems.length == 0) {
+                    sHTML += "<div class='clr'></div><div style='text-align:center; color: #ff0000;'>No items selected. Select items at Setup > Speed Keys</div>";
+                }
+                $("#dvSpeedKeys").html(sHTML);
+            }
+
+            function ReloadItemsList(data) {
+                var HTML = "";
+                var dTaxAmount = 0;
+                var dPriceAmount = 0;
+                var IsAddQty = "True" == "True";
+                var IsRemoveQty = "False" == "True";
+                var IsLineVoid = "False" == "True";
+                currDataList = data;
+
+                if ($("#dvItemsList").hasClass("mCustomScrollbar")) {
+                    $("#dvItemsList").mCustomScrollbar("destroy");
+                }
+
+                $.each(data, function (i, v) {
+
+                    dTaxAmount += v.TaxAmount;
+                    dPriceAmount += v.Quantity * v.Price;
+
+                    HTML += "<div class='db-items-cart-items " + (i % 2 == 0 ? "srchalt" : "") + " clear-fix'>" +
+                        "<div class='col-1 text-center'>" + v.Quantity + "</div>" +
+                        "<div class='col-2'>" + v.ItemDesc + "</div>" +
+                        "<div class='col-3 text-center'>" + (v.IsDiscountLine ? "&nbsp;" : (IsAddQty ? "<img src='/i/plus48x48.png' data-act='1' data-val='" + v.ID + "' alt='' /> " : "&nbsp;")) + (v.IsDiscountLine ? "&nbsp;" : (IsRemoveQty ? "&nbsp;&nbsp;<img src='/i/minus48x48.png' data-act='-1' data-val='" + v.ID + "' alt='' />" : "&nbsp;")) + "</div>" +
+                        "<div class='col-4 text-center'>" + (v.IsTaxable ? "Y" : "N") + "</div>" +
+                        "<div class='col-5 text-right'>" + kendo.format('{0:N2}', v.Price) + "</div>" +
+                        "<div class='col-5 text-right'>" + kendo.format('{0:N2}', v.ExtdPrice) + "</div>" +
+                        "<div class='col-6 text-right'>" + (IsLineVoid ? "<div style='padding-top:6px; height: 29px;'><a class='delitem' href='javascript:DelItem(" + v.ID + ")'><img src='/i/posapp/delete.png' alt='' border='0' /></a></div>" : "&nbsp;") + "</div>" +
+                        "</div>";
+                });
+
+                $("#dvItemsList").html(HTML);
+
+                $("#dvSubTotal").html(kendo.format('{0:N2}', dPriceAmount));
+                $("#dvTaxAmt").html(kendo.format('{0:N2}', dTaxAmount));
+                $("#dvTotalAmt").html(kendo.format('{0:N2}', dPriceAmount + dTaxAmount));
+
+                if (data.length > 6) {
+                    MakeCSB();
+                }
+            }
+
+            function MakeCSB() {
+
+                $("#dvItemsList").mCustomScrollbar({
+                    scrollButtons: { enable: true },
+                    theme: "3d-thick"
+                });
+
+                $(".mCSB_buttonUp,.mCSB_buttonDown").css("margin-left", "11px");
+
+            }
+
+            function DelItem(ItemKey) {
+                $.post("/posapp/DeleteItemFromOrder", { ItemKey: ItemKey }, function (data) {
+                    ReloadItemsList(data);
+                });
+            }
+
+            function HoldCartItems() {
+                if ($("#dvItemsList .mCSB_container").length == 0 && $("#dvItemsList").html().length == 0) {
+                    OpenOnHoldPopUp();
+                    return;
+                }
+
+                $.post("/posapp/holdcart", { Amount: $("#dvTotalAmt").html() }, function (data) {
+                    if (data && data.IsSuccess) {
+                        $("#btnDBHold").html("Hold (" + data.Message + ")");
+                        ReloadItemsList([]);
+                    }
+                });
+            }
+
+            function OpenOnHoldPopUp() {
+                $("#dvHoldCarts").html("<img src='/i/posapp/wait.gif' alt='' />");
+                $.post("/posapp/getonholdcart", null, function (data) {
+                    $("#dvHoldCarts").html(data);
+                });
+
+                ShowRightSidePanel(1);
+            }
+
+            function PayOutMode(ID) {
+                $("#hdnPayMode").val(ID);
+                $("#dvPayeesList").show();
+                $("#dvPayInOutAmountCont").hide();
+                ShowRightSidePanel(2);
+
+            }
+
+            function DoNoSales() {
+
+                $.post("/posapp/DoNoSales", null, function (data) {
+                    OpenDrawer();
+                });
+
+            }
+
+            function OpenDrawer() {
+                var builder = new StarWebPrintBuilder();
+
+                var request = '';
+                request += builder.createInitializationElement();
+                request += builder.createPeripheralElement({ channel: 1, on: 200, off: 200 });
+
+                sendMessage(request);
+            }
+
+            function CheckCancel() {
+                ShowRightSidePanel(12);
+            }
+
+            function CancelTxn(blnAction) {
+                if (blnAction) {
+                    PerformSale(0);
+                }
+                ShowRightSidePanel(0);
+            }
+
+            function PerformSale(Mode) {
+
+                if (glbPayMode == 2)
+                    Mode = 2;
+
+                var IsNoTax = false;
+                if ($("#btnNoTax").html() == "Add Tax") {
+                    IsNoTax = true;
+                }
+
+                $.post("/posapp/DoSales", { Mode: Mode, Tender: glbLastTenderCode, IsNoTax: IsNoTax }, function (data) {
+                    if (data && data.IsSuccess) {
+                        currTranInfo = data;
+                        if (glbAutoPrintReceipt)
+                            PrintReceipt(data);
+                        ReloadItemsList([]);
+
+                        if (Mode == 1) {
+                            //$("#dvReturnChange").html(kendo.format('{0:N2}', glbReturnChange));
+
+                            $("#dvTotalSaleAmt").html(kendo.format('{0:N2}', currTranInfo.TotalSale));
+                            $("#dvAmtCollect").html(kendo.format('{0:N2}', currTranInfo.TotalCollect));
+                            $("#dvReturnChange").html(kendo.format('{0:N2}', currTranInfo.TotalReturn));
+
+                            ShowRightSidePanel(99);
+                        }
+                    }
+                    else {
+                        alert(data.Message || "Error! Generating transaction.");
+                    }
+                });
+            }
+
+            //Receipt Print Code
+            function sendMessage(request) {
+                var url = "http://" + $("#StarPrinterIP").val() + "/StarWebPRNT/SendMessage";
+
+                var trader = new StarWebPrintTrader({ url: url });
+
+                trader.onReceive = function (response) {
+
+                }
+
+                trader.onError = function (response) {
+                    alert("Error: Cash drawer not available.");
+                }
+
+                trader.sendMessage({ request: request });
+            }
+
+            function printReceiptOnSTAR(openDrawer) {
+
+                var arrData = currDataList;
+                var builder = new StarWebPrintBuilder();
+
+                var request = '';
+                request += builder.createInitializationElement();
+                request += builder.createTextElement({ characterspace: 0 });
+
+                request += builder.createAlignmentElement({ position: 'center' });
+                request += builder.createTextElement({ emphasis: true, width: 2, data: 'Best Stop # 2-Little York \n' });
+                request += builder.createTextElement({ width: 1 });
+                request += builder.createTextElement({ emphasis: true, data: "7250 W Little York Rd \n" });
+                request += builder.createTextElement({ emphasis: true, data: "Houston TX 77040 \n" });
+                request += builder.createAlignmentElement({ position: 'left' });
+
+                request += builder.createAlignmentElement({ position: 'center' });
+                request += builder.createTextElement({ emphasis: true, width: 2, data: 'Receipt / Tax Invoice \n' });
+                request += builder.createTextElement({ width: 1 });
+                request += builder.createAlignmentElement({ position: 'left' });
+
+                request += builder.createTextElement({ data: '\n' });
+                request += builder.createTextElement({ data: 'Invoice #: ' + currTranInfo.TranID + '\n' });
+                request += builder.createTextElement({ data: 'Invoice #: ' + currTranInfo.TranTime + '\n' });
+                request += builder.createTextElement({ data: 'Cashier : ' + currTranInfo.Cashier + '\n' });
+
+                request += builder.createTextElement({ data: '\n' });
+                request += builder.createTextElement({ emphasis: true, underline: true, data: 'Item Desc                               Retail\n' });
+                request += builder.createTextElement({ underline: false });
+                request += builder.createTextElement({ emphasis: false });
+                request += builder.createTextElement({ data: '\n' });
+
+                var totalDue = 0;
+                var dTaxAmount = 0;
+                var dPriceAmount = 0;
+
+                $.each(arrData, function (i, v) {
+
+                    v.UPC = v.UPC || "";
+                    var UPCText = v.UPC;
+                    var Spaces = 14 - v.UPC.length;
+
+                    for (var iCtr = 0; iCtr < Spaces; iCtr++) {
+                        UPCText += " ";
+                    }
+                    request += builder.createTextElement({ data: UPCText + '        ' + kendo.format("{0:c2}", v.Quantity * v.Price) + '\n' });
+                    request += builder.createTextElement({ data: v.ItemDesc + '\n' });
+
+                    dTaxAmount += v.TaxAmount;
+                    dPriceAmount += v.Quantity * v.Price;
+
+                });
+
+                if ($.isEmptyObject(currTranInfo.TaxAmount) == false)
+                    dTaxAmount = parseFloat(currTranInfo.TaxAmount);
+
+                request += builder.createTextElement({ underline: true, data: '                                       \n' });
+                request += builder.createTextElement({ underline: false });
+
+                request += builder.createTextElement({ emphasis: true });
+                request += builder.createTextElement({ width: 2, data: 'Sub Total        ' + kendo.format("{0:c2}", dPriceAmount) + '\n' });
+                request += builder.createTextElement({ width: 2, data: 'Tax        ' + kendo.format("{0:c2}", dTaxAmount) + '\n' });
+                request += builder.createTextElement({ width: 2, data: 'TOTAL        ' + kendo.format("{0:c2}", dPriceAmount + dTaxAmount) + '\n' });
+                request += builder.createTextElement({ width: 2, data: '\n' });
+                request += builder.createTextElement({ width: 2, data: ' \n' });
+
+                request += builder.createTextElement({ width: 1 });
+                request += builder.createTextElement({ emphasis: false });
+
+
+                request += builder.createCutPaperElement({ feed: true });
+
+                if (openDrawer) {
+                    request += builder.createPeripheralElement({ channel: 1, on: 200, off: 200 });
+                }
+
+                sendMessage(request);
+            }
+
+            function RegularReceiptPrint(TranID) {
+                $('#frmPrintChk #TranID').val(TranID);
+                $("#frmPrintChk").submit();
+            }
+
+            function PrintReceipt(data) {
+
+                if ($("#StarPrinterIP").val() != "") {
+                    printReceiptOnSTAR(true);
+                }
+                else {
+                    RegularReceiptPrint(data.TranID);
+                }
+            }
+            //Receipt Print Code Ends
+
+            function ResetPayPanel(PayMode) {
+                glbPayMode = PayMode;
+
+                $("#dvTenderLines,#dvChangeVal").html("");
+                $("#tbTenderAmount").val("");
+
+                $.post("/posapp/cleartenderlines", null, function (data) {
+                    ReloadItemsList(data);
+                    $("#dvPayAmtLabel").html($("#dvTotalAmt").html());
+                    ShowRightSidePanel(5);
+                });
+            }
+
+            function ReloadTenderLines() {
+                $("#dvTenderLines").html("<img src='/i/posapp/wait.gif' alt='' />");
+                $.post("/posapp/gettenderlines", null, function (data) {
+                    $("#dvTenderLines").html(data);
+                });
+            }
+
+            function GetReceipts() {
+                ShowRightSidePanel(6);
+                $("#tbReceiptNo").val("");
+                LoadReceipts();
+            }
+
+            function LoadReceipts() {
+                if ($("#dvReceiptsHistory").hasClass("mCustomScrollbar")) {
+                    $("#dvReceiptsHistory").mCustomScrollbar("destroy");
+                }
+
+
+                $("#dvReceiptsHistory").html("<img src='/i/posapp/wait.gif' alt='' />");
+                $.post("/posapp/getreceiptshistory", { TranID: $("#tbReceiptNo").val(), Date: $("#hdnRctDateFilter").val() }, function (data) {
+                    $("#dvReceiptsHistory").html(data);
+
+                    $("#dvReceiptsHistory").mCustomScrollbar({
+                        scrollButtons: { enable: true },
+                        theme: "3d-thick"
+                    });
+                });
+            }
+
+            function PriceCheckTab() {
+                ShowRightSidePanel(8);
+                $("#tbScanUPC").val("");
+                $("#dvPCheckCont").html("");
+            }
+
+            function PriceOverTab() {
+                ShowRightSidePanel(9);
+                $("#tbScanUPC").val("");
+                $("#dvPOverCont").html("");
+                $("#dvPCORItemCont").show();
+                $("#dvPCORItemPriceCont").hide();
+                $("#tbOverrideAmount").val("");
+            }
+
+            function DiscountTab() {
+                ShowRightSidePanel(10);
+                $("#tbDiscountAmount").val("");
+            }
+
+            function ApplyDiscount() {
+                var Amount = parseFloat($("#tbDiscountAmount").val()) || 0;
+                if (Amount == 0 || iDiscountSelDeptId == -1) {
+                    alert("Please enter Amount and/or Select Department");
+                    return;
+                }
+
+                $.post("/posapp/adddiscount", { Amount: Amount, DeptId: iDiscountSelDeptId }, function (data) {
+                    ReloadItemsList(data);
+                    ShowRightSidePanel(0);
+                    iDiscountSelDeptId = -1;
+                });
+            }
+
+            function ApplyDiscountPerc() {
+                var Amount = parseFloat($("#tbDiscountAmount").val()) || 0;
+                if (Amount == 0 || iDiscountSelDeptId == -1) {
+                    alert("Please enter Amount and/or Select Department");
+                    return;
+                }
+
+                $.post("/posapp/adddiscountperc", { Amount: Amount, DeptId: iDiscountSelDeptId }, function (data) {
+                    ReloadItemsList(data);
+                    ShowRightSidePanel(0);
+                    iDiscountSelDeptId = -1;
+                });
+            }
+
+            function SafeDropTab() {
+                ShowRightSidePanel(7);
+                $("#tbSafeDropAmount").val("");
+                $("#dvSDMsg").html("").removeClass("db-guide").removeClass("db-succs");
+            }
+
+            function SafeDropSave() {
+                var Amount = parseFloat($("#tbSafeDropAmount").val()) || 0;
+                if (Amount == 0) {
+                    alert("Please enter valid amount.");
+                    return;
+                }
+                $("#dvSDMsg").html("");
+                $.post("/posapp/safedropamt", { Amount: Amount }, function (data) {
+                    if (data && data.IsSuccess) {
+                        $("#tbSafeDropAmount").val("");
+                        $("#dvSDMsg").html("Amount saved as Safe Drop").addClass("db-succs");
+                        OpenDrawer();
+                    }
+                });
+            }
+
+            function AddSpeedKeyItem(IsVerified) {
+                $.post("/posapp/AddItemFromSearch",
+                    { ItemKey: glbSpeedItemKey, IsRefundSale: (glbQTYMultiplier == 1 ? false : true), QTY: currMLP, IsVerified: IsVerified, SellingUnits: glbSellingUnits, MPRetail: glbMPRetail },
+                    function (data) {
+                        if ((data instanceof Array) == false) {
+                            $("#dvAgeMessage").html(data.Message);
+                            ShowRightSidePanel(11);
+                        }
+                        else if (data && data.length > 0) {
+                            currMLP = 1;
+                            glbQTYMultiplier = 1;
+                            glbSellingUnits = 1;
+                            glbMPRetail = null;
+                            ReloadItemsList(data);
+                        }
+                    });
+            }
+
+            function AgeVerified(blAns) {
+                if (blAns == false) {
+                    obUPCData = {};
+                    currMLP = 1;
+                    glbQTYMultiplier = 1;
+                    glbSellingUnits = 1;
+                    glbMPRetail = null;
+                    $("#tbScanUPC").val("").focus();
+                }
+                else {
+                    AddSpeedKeyItem(true);
+                }
+                ShowRightSidePanel(0);
+            }
+
+            function DeptAgeVerified(blAns) {
+                if (blAns) {
+                    var Amount = parseInt($("#tbScanUPC").val()) || 0;
+                    $.post("/posapp/AddDeptSale", { DeptId: SelDeptId, Amount: glbQTYMultiplier * Amount, QTY: currMLP }, function (data) {
+                        $("#tbScanUPC").val("").focus();
+                        ReloadItemsList(data);
+                    });
+                }
+                currMLP = 1;
+                glbQTYMultiplier = 1;
+                glbSellingUnits = 1;
+                glbMPRetail = null;
+                ShowRightSidePanel(0);
+            }
+
+            function RefundAction() {
+                glbQTYMultiplier = -1;
+            }
+
+            function LoadTenderButtons() {
+                $("#dvTenderButtons").html("");
+                $.post("/posapp/gettenderbuttons", null, function (data) {
+                    $("#dvTenderButtons").html(data);
+                });
+            }
+
+            function LoadTenderLines() {
+                $("#dvTenderLines").html("");
+                $.post("/posapp/gettenderlines", null, function (data) {
+                    $("#dvTenderLines").html(data);
+                });
+            }
+
+            function SaveLocalCredit() {
+                var Amount = parseFloat($(".pos-pending").html()) || 0;
+                if (iLocalCreditSelPayeeId == -1) {
+                    alert("Please select Payee");
+                    return;
+                }
+
+                $.post("/posapp/savelocalcredit", { Amount: Amount, PayeeId: iLocalCreditSelPayeeId }, function (data) {
+                    iLocalCreditSelPayeeId = -1;
+                    ReloadItemsList([]);
+                    glbReturnChange = 0;
+                    $("#dvChangeVal").html(kendo.format('{0:c2}', 0));
+                    PerformSale(1);
+                });
+            }
+        </script>
+
+        @*<div id="footer-spacer"></div>
+        </div>*@
+        <div id="footer">
+            <div class="footer">
+                <div style="float:left; margin-left:8px; margin-top:8px;">
+                    <script type="text/javascript" src="https://seal.verisign.com/getseal?host_name=www.modisoftinc.com&amp;size=S&amp;use_flash=NO&amp;use_transparent=YES&amp;lang=en"></script>
+                </div>
+                <div class="info" style="margin:0 auto; width: 315px; text-align:center;">
+                    <br />
+                    Copyright &copy; Modisoft Inc. All rights reserved.<br />
+                    Email: <a href="mailto:support@modisoftinc.com">support@modisoftinc.com</a> | Phone: 877-602-6634
+                </div>
+
+            </div>
+        </div>
+        <div class="modal"></div>
+    </body>
+</html>

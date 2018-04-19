@@ -1,0 +1,62 @@
+﻿@model POS.Models.Supplier
+
+<h4>Supplier</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Supplier">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Order_Num" class="control-label"></label>
+                <input asp-for="Order_Num" class="form-control" />
+                <span asp-validation-for="Order_Num" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SupplierName" class="control-label"></label>
+                <input asp-for="SupplierName" class="form-control" />
+                <span asp-validation-for="SupplierName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductName" class="control-label"></label>
+                <input asp-for="ProductName" class="form-control" />
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="S_streetName" class="control-label"></label>
+                <input asp-for="S_streetName" class="form-control" />
+                <span asp-validation-for="S_streetName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="S_streetNum" class="control-label"></label>
+                <input asp-for="S_streetNum" class="form-control" />
+                <span asp-validation-for="S_streetNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="S_City" class="control-label"></label>
+                <input asp-for="S_City" class="form-control" />
+                <span asp-validation-for="S_City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="S_State" class="control-label"></label>
+                <input asp-for="S_State" class="form-control" />
+                <span asp-validation-for="S_State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="S_zipCode" class="control-label"></label>
+                <input asp-for="S_zipCode" class="form-control" />
+                <span asp-validation-for="S_zipCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
